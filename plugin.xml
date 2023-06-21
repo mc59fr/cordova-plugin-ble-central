@@ -64,13 +64,12 @@
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
             <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-            <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
             <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30"/>
             <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30"/>
             <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
             <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
         </config-file>
-
+        <hook src="plugins/cordova-plugin-ble-central/stripDuplicatePermissions.js" type="after_prepare" />
         <config-file target="res/xml/config.xml" parent="/*">
             <preference name="accessBackgroundLocation" value="$ACCESS_BACKGROUND_LOCATION"/>
         </config-file>
