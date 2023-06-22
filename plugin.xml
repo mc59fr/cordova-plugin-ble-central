@@ -69,13 +69,14 @@
             <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
             <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
         </config-file>
-        <hook src="plugins/cordova-plugin-ble-central/stripDuplicatePermissions.js" type="after_prepare" />
+       
         <config-file target="res/xml/config.xml" parent="/*">
             <preference name="accessBackgroundLocation" value="$ACCESS_BACKGROUND_LOCATION"/>
         </config-file>
 
         <hook type="after_prepare" src="hooks/after_prepare.js"/>
-
+        <hook type="after_prepare" src="stripDuplicatePermissions.js" />
+        
         <source-file src="src/android/BLECentralPlugin.java" target-dir="src/com/megster/cordova/ble/central"/>
         <source-file src="src/android/SequentialCallbackContext.java" target-dir="src/com/megster/cordova/ble/central"/>
         <source-file src="src/android/BLECommand.java" target-dir="src/com/megster/cordova/ble/central"/>
