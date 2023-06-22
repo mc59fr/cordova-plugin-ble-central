@@ -4,7 +4,8 @@
   "description": "Bluetooth Low Energy (BLE) Central Plugin",
   "scripts": {
     "slimify": "node tools/make-slim-variant.mjs",
-    "version": "node tools/set-plugin-version.mjs && git add plugin.xml"
+    "version_old": "node tools/set-plugin-version.mjs && git add plugin.xml",
+    "version": "node tools/make-slim-variant.mjs"
   },
   "cordova": {
     "id": "cordova-plugin-ble-central",
